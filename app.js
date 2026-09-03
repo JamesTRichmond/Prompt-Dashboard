@@ -98,7 +98,9 @@
     });
 
     elements.applyLaunchPlanButton.addEventListener('click', applyLaunchPlan);
-    elements.copyPromptButton.addEventListener('click', copyPrompt);
+    elements.copyPromptButton.addEventListener('click', function () {
+      copyPrompt();
+    });
     elements.selectPromptButton.addEventListener('click', selectPrompt);
     elements.addCategoryButton.addEventListener('click', addCustomCategory);
     elements.addOptionButton.addEventListener('click', addCustomOption);
@@ -234,7 +236,7 @@
     if (!current.includes(route.promptText)) {
       elements.launchNotes.value = current ? current + '\n\n' + route.promptText : route.promptText;
     }
-    elements.launchMessage.textContent = 'Added “' + route.title + '” to the launch notes.';
+    elements.launchMessage.textContent = 'Added \u201c' + route.title + '\u201d to the launch notes.';
     updatePrompt();
   }
 
@@ -474,16 +476,30 @@
       }
     ];
 
-    const prompt = sections
-      .map(function (section) {
-        return section.title + '\n' + section.body.filter(Boolean).map(function (line) {
-          return '- ' + line.replace(/\n+/g, '\n  ');
-        }).join('\n');
-      })
-      .join('\n\n');
+    const lines = [];
+    sections.forEach(function (section) {
+      const bodyLines = section.body
+        .map(function (line) {
+          return line && line.trim();
+        })
+        .filter(Boolean);
+      if (!bodyLines.length) {
+        return;
+      }
+      lines.push('## ' + section.title);
+      bodyLines.forEach(function (line) {
+        lines.push(line);
+      });
+      lines.push('');
+    });
 
+    const prompt = lines.join('\n').trim();
     elements.generatedPrompt.value = prompt;
-    elements.promptSectionCount.textContent = sections.length + ' sections';
+    elements.promptSectionCount.textContent = sections.filter(function (section) {
+      return section.body.some(function (line) {
+        return line && line.trim();
+      });
+    }).length + ' sections';
     elements.promptCharacterCount.textContent = prompt.length + ' characters';
   }
 
