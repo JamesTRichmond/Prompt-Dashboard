@@ -1,6 +1,6 @@
-# Identity Forge
+# Transmuter
 
-**Prompt Dashboard is becoming an identity forge.**
+**Prompt Dashboard is becoming a Transmuter.**
 
 Not a prompt optimizer. Not a prompt builder. A soundboard that births agents from impossible combinations of perspective, era, emotion, and bias — then lets you deploy them, evolve them, or just play with them.
 
@@ -14,13 +14,13 @@ The dials are not numbers. Each is an agent with a bias, a voice, an agenda. The
 
 ## The two modes
 
-**Forge** — for play. Crank five dials at random. Birth a Mesozoic plant cell, a sunburn that is healing, a ghost from a four-wheeler wreck, a fifth-dimensional resonance. Talk to something that should not exist. For the chemical thrill of mixing compounds. No goal. Just emergence.
+**Incubate** — for play. Crank five dials at random. Birth a Mesozoic plant cell, a sunburn that is healing, a ghost from a four-wheeler wreck, a fifth-dimensional resonance. Talk to something that should not exist. For the chemical thrill of mixing compounds. No goal. Just emergence.
 
-**Deploy** — for work. Forge a 1920s rich person's voice for a history paper. Forge an atom, a light beam twenty-five million years out, a 1910 labor organizer. Deploy them as a mixture-of-experts panel. They argue. The routing is not fixed. The forge keeps evolving the panel based on what each agent contributes. The problem gets solved by perspectives that did not exist before you opened the app.
+**Manifest** — for work. Manifest a 1920s rich person's voice for a history paper. Manifest an atom, a light beam twenty-five million years out, a 1910 labor organizer. Deploy them as a mixture-of-experts panel. They argue. The routing is not fixed. The Transmuter keeps evolving the panel based on what each agent contributes. The problem gets solved by perspectives that did not exist before you opened the app.
 
 ## The self-model
 
-The forge turned inward. Instead of building agents from random dials, it builds one from *you*.
+The Transmuter turned inward. Instead of building agents from random dials, it builds one from *you*.
 
 Every input — medical history, family history, credit score, favorite food, how often you hiccup, how many times in a row — becomes a dial on a living portrait of yourself. Even the inputs nobody knows how to read yet. The system keeps a model of the person's self, continuously, so they can keep an eye on themselves.
 
@@ -36,17 +36,17 @@ The life-context layer is what makes it stop being a toy. The machine knows you 
 
 The fifth-dimensional resonance is not a feature. It is a gap. You cannot define it, and that is the point. The agent inhabits a reality you cannot fully model, and that gap is where the new perspective actually comes from. If you could explain it, it would not be new.
 
-The forge does not need you to understand the inputs. It needs you to trust that something is happening in the space between them.
+The Transmuter does not need you to understand the inputs. It needs you to trust that something is happening in the space between them.
 
 ## What a user experiences
 
-**The writer.** Stuck on a history paper. Opens the forge, types "1920s rich person's perspective." Watches a dial set itself: era to 1920, class to old money, reverence high, temperature low. An agent appears — not a prompt, a voice. It speaks in that person's cadence, argues from their blind spots. She interviews it. The paper writes itself from the conversation.
+**The writer.** Stuck on a history paper. Opens the Transmuter, types "1920s rich person's perspective." Watches a dial set itself: era to 1920, class to old money, reverence high, temperature low. An agent appears — not a prompt, a voice. It speaks in that person's cadence, argues from their blind spots. She interviews it. The paper writes itself from the conversation.
 
-**The tinkerer.** Wants weird. Cranks five dials at random. The forge does not warn him. It births something that should not exist, and he just talks to it. For fun. For the thrill. No goal, just emergence.
+**The tinkerer.** Wants weird. Cranks five dials at random. The Transmuter does not warn him. It births something that should not exist, and he just talks to it. For fun. For the thrill. No goal, just emergence.
 
-**The strategist.** Building a mixture-of-experts panel for a real problem. Forges three agents — a 1910 labor organizer, an atom, a light beam twenty-five million years out — and deploys them as a panel. They argue. The routing is not fixed. The forge keeps evolving the panel. The problem gets solved by perspectives that did not exist before he opened the app.
+**The strategist.** Building a mixture-of-experts panel for a real problem. Manifests three agents — a 1910 labor organizer, an atom, a light beam twenty-five million years out — and deploys them as a panel. They argue. The routing is not fixed. The Transmuter keeps evolving the panel. The problem gets solved by perspectives that did not exist before he opened the app.
 
-**The seeker.** Had a bad week. The forge reads his context — texts, emails, the breakup, the restlessness — and does not offer prompts. It offers a combination tuned to where he is. Not to fix him. To give him a perspective he could not reach alone. The agent does not solve his life. It gives him a new angle on it.
+**The seeker.** Had a bad week. The Transmuter reads his context — texts, emails, the breakup, the restlessness — and does not offer prompts. It offers a combination tuned to where he is. Not to fix him. To give him a perspective he could not reach alone. The agent does not solve his life. It gives him a new angle on it.
 
 ## Internals
 
@@ -67,4 +67,4 @@ The self-model requires trust. It lives on the user's device or under explicit c
 
 ## Name
 
-"Prompt Dashboard" and "Prompt Optimizer" were working names. The product is an **identity forge** — an agent generator, optimizer, evolver, transmogrifier. The repo name stays for now. The vision does not.
+"Prompt Dashboard" and "Prompt Optimizer" were working names. The product is a **Transmuter** — an agent generator, optimizer, evolver, transmogrifier. The repo name stays for now. The vision does not.
