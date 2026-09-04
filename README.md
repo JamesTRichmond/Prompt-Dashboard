@@ -1,6 +1,6 @@
 # Prompt Dashboard
 
-Prompt Dashboard is becoming an **identity forge** — a soundboard that births agents from impossible combinations of perspective, era, emotion, and bias, then lets you deploy them, evolve them, or just play with them.
+Prompt Dashboard is becoming a **Transmuter** — a soundboard that births agents from impossible combinations of perspective, era, emotion, and bias, then lets you deploy them, evolve them, or just play with them.
 
 Not a prompt optimizer. Not a prompt builder. The output is not a prompt. It is a being with a perspective. The being is the product.
 
@@ -12,13 +12,13 @@ The dials are not numbers. Each is an agent with a bias, a voice, an agenda. The
 
 ## Two modes
 
-**Forge** — for play. Crank five dials at random. Birth a Mesozoic plant cell, a sunburn that is healing, a ghost from a four-wheeler wreck, a fifth-dimensional resonance. Talk to something that should not exist. For the chemical thrill of mixing compounds. No goal. Just emergence.
+**Incubate** — for play. Crank five dials at random. Birth a Mesozoic plant cell, a sunburn that is healing, a ghost from a four-wheeler wreck, a fifth-dimensional resonance. Talk to something that should not exist. For the chemical thrill of mixing compounds. No goal. Just emergence.
 
-**Deploy** — for work. Forge a 1920s rich person's voice for a history paper. Forge an atom, a light beam twenty-five million years out, a 1910 labor organizer. Deploy them as a mixture-of-experts panel. They argue. The routing is not fixed. The forge keeps evolving the panel. The problem gets solved by perspectives that did not exist before you opened the app.
+**Manifest** — for work. Manifest a 1920s rich person's voice for a history paper. Manifest an atom, a light beam twenty-five million years out, a 1910 labor organizer. Deploy them as a mixture-of-experts panel. They argue. The routing is not fixed. The Transmuter keeps evolving the panel. The problem gets solved by perspectives that did not exist before you opened the app.
 
 ## The self-model
 
-The forge turned inward. A continuous model of *you*, built from life inputs — even the ones nobody knows how to read yet. Self-model, predictor, and live diagnostic in one.
+The Transmuter turned inward. A continuous model of *you*, built from life inputs — even the ones nobody knows how to read yet. Self-model, predictor, and live diagnostic in one.
 
 - Anticipates collisions (medication change + winter + seasonal affective disorder) before you feel them.
 - Tweakable: "what if I got a dog" runs a simulation of yourself forward.
@@ -45,7 +45,7 @@ The forge turned inward. A continuous model of *you*, built from life inputs —
 2. Open `index.html` directly in a browser, or serve the repository root with any static file server.
 3. Fill in the Human Field and Main Prompt Builder.
 4. Choose a time lens and launch route.
-5. Copy the generated prompt from the Live Request Rail and paste it into ChatGPT.
+5. Copy the generated prompt from the Live Request Rail and paste into ChatGPT.
 
 ## How to publish with GitHub Pages
 
@@ -62,7 +62,7 @@ The first public version is static and does **not** send user data anywhere. All
 ## Future path
 
 1. Refine the static GitHub Pages workflow with public feedback
-2. Evolve the dashboard into the **identity-forge soundboard** (still static, still browser-only)
+2. Evolve the dashboard into the **Transmuter soundboard** (still static, still browser-only)
 3. Wrap the strongest workflow as a **Custom GPT**
 4. Expand into a full **ChatGPT App** with an MCP server and stable HTTPS hosting
 5. Only then, under explicit consent, the **self-model**
