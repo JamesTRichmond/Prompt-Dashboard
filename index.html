@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prompt Dashboard</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="sleek.css" />
   </head>
   <body>
+    <a class="sr-only" href="#dashboard">Skip to dashboard</a>
     <header class="topbar">
       <div>
         <p class="eyebrow">Static request builder for GitHub Pages</p>
@@ -27,52 +29,27 @@
 
         <div class="field-stack">
           <label for="affectedPeople">Who is affected?</label>
-          <textarea
-            id="affectedPeople"
-            name="affectedPeople"
-            rows="3"
-            placeholder="Name the people, teams, communities, or customers touched by this outcome."
-          ></textarea>
+          <textarea id="affectedPeople" name="affectedPeople" rows="3" placeholder="Name the people, teams, communities, or customers touched by this outcome."></textarea>
         </div>
 
         <div class="field-stack">
           <label for="emotionalTone">Desired emotional tone</label>
-          <input
-            id="emotionalTone"
-            name="emotionalTone"
-            type="text"
-            placeholder="Calm, direct, careful, encouraging, accountable..."
-          />
+          <input id="emotionalTone" name="emotionalTone" type="text" placeholder="Calm, direct, careful, encouraging, accountable..." />
         </div>
 
         <div class="field-stack">
           <label for="consentQuestions">Consent and checkpoint questions</label>
-          <textarea
-            id="consentQuestions"
-            name="consentQuestions"
-            rows="4"
-            placeholder="What should be confirmed before moving ahead? Where should the work pause for review?"
-          ></textarea>
+          <textarea id="consentQuestions" name="consentQuestions" rows="4" placeholder="What should be confirmed before moving ahead? Where should the work pause for review?"></textarea>
         </div>
 
         <div class="field-stack">
           <label for="benefits">Who benefits, and how?</label>
-          <textarea
-            id="benefits"
-            name="benefits"
-            rows="3"
-            placeholder="Describe who gains from a good result and what meaningful improvement they feel."
-          ></textarea>
+          <textarea id="benefits" name="benefits" rows="3" placeholder="Describe who gains from a good result and what meaningful improvement they feel."></textarea>
         </div>
 
         <div class="field-stack">
           <label for="challengePath">How can people challenge or revise the result?</label>
-          <textarea
-            id="challengePath"
-            name="challengePath"
-            rows="4"
-            placeholder="Explain how someone can question assumptions, ask for changes, or suggest alternatives."
-          ></textarea>
+          <textarea id="challengePath" name="challengePath" rows="4" placeholder="Explain how someone can question assumptions, ask for changes, or suggest alternatives."></textarea>
         </div>
       </section>
 
@@ -88,7 +65,6 @@
               <h3>Starter prompt categories</h3>
               <p id="starterCount" class="muted"></p>
             </div>
-
             <label for="starterCategory">Choose a category</label>
             <select id="starterCategory" name="starterCategory"></select>
             <p id="starterCategoryDescription" class="muted"></p>
@@ -100,22 +76,12 @@
             <h3>Add your own category or option</h3>
             <div class="inline-form">
               <label class="sr-only" for="customCategoryName">New category name</label>
-              <input
-                id="customCategoryName"
-                name="customCategoryName"
-                type="text"
-                placeholder="New category name"
-              />
+              <input id="customCategoryName" name="customCategoryName" type="text" placeholder="New category name" />
               <button id="addCategoryButton" type="button">Add category</button>
             </div>
             <div class="inline-form">
               <label class="sr-only" for="customOptionTitle">Custom option title</label>
-              <input
-                id="customOptionTitle"
-                name="customOptionTitle"
-                type="text"
-                placeholder="Custom option title"
-              />
+              <input id="customOptionTitle" name="customOptionTitle" type="text" placeholder="Custom option title" />
               <button id="addOptionButton" type="button">Add option to selected category</button>
             </div>
             <p id="customMessage" class="inline-status" aria-live="polite"></p>
@@ -123,53 +89,28 @@
 
           <div class="section-block">
             <label for="undertaking">Undertaking / ask</label>
-            <textarea
-              id="undertaking"
-              name="undertaking"
-              rows="4"
-              placeholder="What do you want ChatGPT to help produce, decide, explain, design, or improve?"
-            ></textarea>
+            <textarea id="undertaking" name="undertaking" rows="4" placeholder="What do you want ChatGPT to help produce, decide, explain, design, or improve?"></textarea>
           </div>
 
           <div class="section-block two-column-block">
             <div class="field-stack">
               <label for="context">Context</label>
-              <textarea
-                id="context"
-                name="context"
-                rows="4"
-                placeholder="What background, current reality, dependencies, or audience context matters?"
-              ></textarea>
+              <textarea id="context" name="context" rows="4" placeholder="What background, current reality, dependencies, or audience context matters?"></textarea>
             </div>
             <div class="field-stack">
               <label for="guardrails">Guardrails and constraints</label>
-              <textarea
-                id="guardrails"
-                name="guardrails"
-                rows="4"
-                placeholder="What should be avoided, respected, or kept within bounds?"
-              ></textarea>
+              <textarea id="guardrails" name="guardrails" rows="4" placeholder="What should be avoided, respected, or kept within bounds?"></textarea>
             </div>
           </div>
 
           <div class="section-block two-column-block">
             <div class="field-stack">
               <label for="desiredFormat">Desired format</label>
-              <textarea
-                id="desiredFormat"
-                name="desiredFormat"
-                rows="3"
-                placeholder="Bullet list, email draft, roadmap, table, copy deck, checklist..."
-              ></textarea>
+              <textarea id="desiredFormat" name="desiredFormat" rows="3" placeholder="Bullet list, email draft, roadmap, table, copy deck, checklist..."></textarea>
             </div>
             <div class="field-stack">
               <label for="successCriteria">Success criteria</label>
-              <textarea
-                id="successCriteria"
-                name="successCriteria"
-                rows="3"
-                placeholder="What would make the result truly useful, trustworthy, and ready to hand off?"
-              ></textarea>
+              <textarea id="successCriteria" name="successCriteria" rows="3" placeholder="What would make the result truly useful, trustworthy, and ready to hand off?"></textarea>
             </div>
           </div>
 
@@ -183,7 +124,6 @@
               <select id="timeLensSelect" name="timeLensSelect"></select>
               <div id="timeLensPreview" class="selection-preview"></div>
             </div>
-
             <div>
               <div class="section-title-row">
                 <h3>Launch Compass</h3>
@@ -192,12 +132,7 @@
               <div id="launchRoutes" class="launch-grid" role="radiogroup" aria-label="Launch routes"></div>
               <button id="applyLaunchPlanButton" type="button">Add selected launch plan</button>
               <label for="launchNotes">Launch notes</label>
-              <textarea
-                id="launchNotes"
-                name="launchNotes"
-                rows="3"
-                placeholder="Optional notes about launch sequence, feedback loops, or delivery path."
-              ></textarea>
+              <textarea id="launchNotes" name="launchNotes" rows="3" placeholder="Optional notes about launch sequence, feedback loops, or delivery path."></textarea>
               <p id="launchMessage" class="inline-status" aria-live="polite"></p>
             </div>
           </div>
@@ -252,21 +187,17 @@
           <h2 id="rail-heading">Live Request Rail</h2>
           <p>Review the assembled prompt, then copy it into ChatGPT.</p>
         </div>
-
         <div class="rail-metrics">
           <span id="promptSectionCount">0 sections</span>
           <span id="promptCharacterCount">0 characters</span>
         </div>
-
         <label for="generatedPrompt">Generated prompt</label>
         <textarea id="generatedPrompt" name="generatedPrompt" rows="24" readonly></textarea>
-
         <div class="button-row rail-actions">
           <button id="copyPromptButton" type="button">Copy prompt</button>
           <button id="selectPromptButton" type="button">Select text</button>
         </div>
         <p id="copyStatus" class="inline-status" aria-live="polite"></p>
-
         <div class="rail-note">
           <strong>Static by design:</strong> this first release runs fully in the browser,
           saves only to localStorage, and does not send your prompt anywhere.

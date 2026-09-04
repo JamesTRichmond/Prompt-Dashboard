@@ -1,0 +1,88 @@
+/* Editorial clean pass. Sits on top of styles.css. */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Source+Sans+3:wght@400;500;600&display=swap");
+
+:root {
+  --bg: #f6f4ef;
+  --panel: #fffcf7;
+  --panel-border: #e4ddd0;
+  --text: #1b1d1c;
+  --muted: #6b726e;
+  --accent: #2f4a46;
+  --accent-strong: #1d3330;
+  --accent-soft: #e7eeea;
+  --warm: #f3eee4;
+  --shadow: 0 1px 0 rgba(27, 29, 28, 0.04), 0 18px 40px rgba(27, 29, 28, 0.05);
+  font-family: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: #f6f4ef;
+  letter-spacing: -0.011em;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.topbar {
+  align-items: baseline;
+  padding: 2rem 2rem 0.6rem;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.topbar h1 {
+  font-size: clamp(2rem, 2vw + 1.2rem, 2.8rem);
+  font-weight: 600;
+}
+
+.eyebrow {
+  letter-spacing: 0.16em;
+  font-weight: 500;
+}
+
+.dashboard {
+  gap: 1.15rem;
+  padding: 1.15rem 2rem 2rem;
+}
+
+.panel {
+  border-radius: 4px;
+  border-color: var(--panel-border);
+  box-shadow: none;
+  padding: 1.35rem 1.4rem;
+}
+
+.rail {
+  background: #fffcf7;
+}
+
+button {
+  border-radius: 3px;
+  padding: 0.62rem 0.95rem;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+input, select, textarea {
+  border-radius: 3px;
+  background: #fff;
+}
+
+.chip, .route-card, .selection-preview, .random-result, .rail-note {
+  border-radius: 4px;
+}
+
+.chip {
+  min-height: 4.2rem;
+  background: #fff;
+  color: var(--text);
+  border-color: var(--panel-border);
+}
+
+#generatedPrompt {
+  font-family: "Source Sans 3", ui-sans-serif, sans-serif;
+  line-height: 1.55;
+  background: #faf8f3;
+}
