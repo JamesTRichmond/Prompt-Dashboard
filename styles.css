@@ -285,6 +285,23 @@ p {
   border: 0;
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 0 0 12px 0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
 @media (max-width: 1180px) {
   .dashboard {
     grid-template-columns: 1fr;
