@@ -11,8 +11,28 @@
     customCategories: 'promptDashboard.customCategories',
     customOptions: 'promptDashboard.customOptions',
     savedRandomResults: 'promptDashboard.savedRandomResults',
-    recentRandomHistory: 'promptDashboard.recentRandomHistory'
+    recentRandomHistory: 'promptDashboard.recentRandomHistory',
+    mode: 'promptDashboard.mode'
   };
+
+  const MODE_COPY = {
+    incubate: {
+      label: 'Incubate',
+      hint: 'Incubate: play, weird combinations, no goal except emergence.',
+      brief: 'Birth a being from the mix. Do not optimize the user\'s wording. Transmogrify it. Prefer strange, specific perspectives over a polished assistant voice.',
+      handoff: 'Speak as the being that emerged from this mix. Stay in perspective. Surprise is allowed. Usefulness is optional.'
+    },
+    manifest: {
+      label: 'Manifest',
+      hint: 'Manifest: work. Assemble a mixture-of-experts panel that can be deployed.',
+      brief: 'Manifest a usable perspective or panel for the undertaking. Combination still rules, but the output must be deployable.',
+      handoff: 'Respond as the manifested perspective or panel. Keep the result reviewable, challengeable, and reusable. Name tradeoffs.'
+    }
+  };
+
+  function normalizeMode(value) {
+    return value === 'manifest' ? 'manifest' : 'incubate';
+  }
 
   const state = {
     selectedCategoryKey: builtInCategories[0].key,
@@ -23,7 +43,8 @@
     customCategories: storage.get(storageKeys.customCategories, []),
     customOptions: storage.get(storageKeys.customOptions, {}),
     savedRandomResults: storage.get(storageKeys.savedRandomResults, []),
-    recentRandomHistory: storage.get(storageKeys.recentRandomHistory, [])
+    recentRandomHistory: storage.get(storageKeys.recentRandomHistory, []),
+    mode: normalizeMode(storage.get(storageKeys.mode, 'incubate'))
   };
 
   const elements = {
@@ -66,7 +87,10 @@
     useRandomButton: document.getElementById('useRandomButton'),
     rollRandomButton: document.getElementById('rollRandomButton'),
     saveRandomButton: document.getElementById('saveRandomButton'),
-    savedRandomList: document.getElementById('savedRandomList')
+    savedRandomList: document.getElementById('savedRandomList'),
+    modeIncubate: document.getElementById('modeIncubate'),
+    modeManifest: document.getElementById('modeManifest'),
+    modeHint: document.getElementById('modeHint')
   };
 
   init();
@@ -76,6 +100,7 @@
     renderTimeLensSelect();
     renderLaunchRoutes();
     renderSavedRandomResults();
+    renderMode();
     bindEvents();
     renderStarterOptions();
     updateTimeLensPreview();
@@ -96,6 +121,17 @@
       updateTimeLensPreview();
       updatePrompt();
     });
+
+    if (elements.modeIncubate) {
+      elements.modeIncubate.addEventListener('click', function () {
+        setMode('incubate');
+      });
+    }
+    if (elements.modeManifest) {
+      elements.modeManifest.addEventListener('click', function () {
+        setMode('manifest');
+      });
+    }
 
     elements.applyLaunchPlanButton.addEventListener('click', applyLaunchPlan);
     elements.copyPromptButton.addEventListener('click', function () {
@@ -426,10 +462,41 @@
     });
   }
 
+  function setMode(next) {
+    state.mode = normalizeMode(next);
+    storage.set(storageKeys.mode, state.mode);
+    renderMode();
+    updatePrompt();
+  }
+
+  function renderMode() {
+    const mode = normalizeMode(state.mode);
+    const copy = MODE_COPY[mode];
+    if (elements.modeIncubate) {
+      const on = mode === 'incubate';
+      elements.modeIncubate.classList.toggle('active', on);
+      elements.modeIncubate.setAttribute('aria-checked', on ? 'true' : 'false');
+    }
+    if (elements.modeManifest) {
+      const on = mode === 'manifest';
+      elements.modeManifest.classList.toggle('active', on);
+      elements.modeManifest.setAttribute('aria-checked', on ? 'true' : 'false');
+    }
+    if (elements.modeHint && copy) {
+      elements.modeHint.textContent = copy.hint;
+    }
+  }
+
   function updatePrompt() {
     const lens = getTimeLensByKey(state.selectedTimeLensKey);
     const route = getLaunchRouteByKey(state.selectedLaunchRouteKey);
+    const mode = normalizeMode(state.mode);
+    const modeCopy = MODE_COPY[mode];
     const sections = [
+      {
+        title: 'Mode',
+        body: [modeCopy.label + ' \u2014 ' + modeCopy.brief]
+      },
       {
         title: 'Outcome',
         body: [
@@ -470,7 +537,7 @@
       {
         title: 'Handoff / expected output',
         body: [
-          'Please respond with a clear, structured result that a person can review, challenge, revise, and then reuse in ChatGPT or a public workflow.',
+          modeCopy.handoff,
           'If tradeoffs appear, name them explicitly and suggest the next checkpoint.'
         ]
       }
@@ -511,9 +578,7 @@
         elements.copyStatus.textContent = 'Prompt copied to clipboard.';
         return;
       }
-    } catch (error) {
-      // fall through to manual selection
-    }
+    } catch (error) {}
 
     selectPrompt();
     elements.copyStatus.textContent = 'Clipboard API unavailable here. The prompt text is selected so you can copy it manually.';
@@ -603,13 +668,11 @@
     if (length <= 0) {
       return 0;
     }
-
     if (window.crypto && typeof window.crypto.getRandomValues === 'function') {
       const values = new Uint32Array(1);
       window.crypto.getRandomValues(values);
       return values[0] % length;
     }
-
     return Math.floor(Math.random() * length);
   }
 
@@ -623,7 +686,6 @@
 
   function createSafeStorage() {
     const memoryStore = {};
-
     return {
       get: function (key, fallback) {
         try {
