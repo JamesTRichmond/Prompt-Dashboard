@@ -42,6 +42,32 @@ h1, h2, h3, h4 {
   font-weight: 500;
 }
 
+.mode-toggle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.7rem;
+  width: 100%;
+  margin-top: 0.35rem;
+}
+
+.mode-toggle button {
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--panel-border);
+}
+
+.mode-toggle button.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.mode-toggle #modeHint {
+  flex: 1 1 16rem;
+  margin: 0;
+}
+
 .dashboard {
   gap: 1.15rem;
   padding: 1.15rem 2rem 2rem;
