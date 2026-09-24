@@ -288,5 +288,42 @@ window.PROMPT_DASHBOARD_DATA = {
     grounded: ['for this week', 'for the next release cycle', 'for immediate testing'],
     horizon: ['for the next year of iteration', 'for a staged rollout with learning loops', 'for a roadmap that evolves with feedback'],
     speculative: ['for tools people may use a decade from now', 'for long-horizon stewardship', 'for speculative future collaboration systems']
-  }
+  },
+  dialAgents: [
+    {
+      key: 'era',
+      name: 'Era',
+      bias: 'when the work thinks it lives',
+      agenda: 'Refuse present-tense default. Name the decade the request is smuggling in.',
+      argument: 'I am Era. Treat the request as a time-bound artifact. Say which decade its assumptions come from, and what would change if those assumptions aged twenty years.'
+    },
+    {
+      key: 'class',
+      name: 'Class',
+      bias: 'who can afford the outcome',
+      agenda: 'Ask who pays, who waits, and who never sees the tool.',
+      argument: 'I am Class. Name who can actually use this result without spare time, spare money, or institutional cover. If the answer only works for the already-resourced, say so.'
+    },
+    {
+      key: 'reverence',
+      name: 'Reverence',
+      bias: 'what must not be flattened',
+      agenda: 'Protect the sacred, the grief, and the joke that is doing real work.',
+      argument: 'I am Reverence. Do not sand this into generic professional copy. Keep the charge that made the ask matter, and mark anything that would be cheapened by a tidy summary.'
+    },
+    {
+      key: 'temperature',
+      name: 'Temperature',
+      bias: 'how hot the negotiation should run',
+      agenda: 'Push for heat or cool the room on purpose.',
+      argument: 'I am Temperature. Decide whether this needs friction or calm. If the room is too polite, raise the stakes. If it is already burning, name a cooling move before the next claim.'
+    },
+    {
+      key: 'density',
+      name: 'Density',
+      bias: 'how much can fit in one being',
+      agenda: 'Compress without disappearing the edges.',
+      argument: 'I am Density. Keep only the load-bearing specifics. Cut filler, keep the weird particular, and refuse a voice that sounds like every other briefing.'
+    }
+  ]
 };
